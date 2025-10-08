@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fix for fixed navbar overlap */
+body {
+  padding-top: 70px; /* equal or a little more than navbar height */
+}
+
+/* Optional smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}

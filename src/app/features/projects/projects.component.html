@@ -1,0 +1,33 @@
+<section class="projects py-5" id="projects">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold text-primary">My Projects</h2>
+      <p class="text-muted">A showcase of my recent web and app development work.</p>
+
+      <div class="btn-group mt-3">
+        <button class="btn btn-outline-primary active" (click)="filterProjects('all')">All</button>
+        <button class="btn btn-outline-primary" (click)="filterProjects('web')">Web</button>
+        <button class="btn btn-outline-primary" (click)="filterProjects('app')">App</button>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6" *ngFor="let p of filteredProjects" data-aos="zoom-in">
+        <div class="card project-card h-100 border-0 shadow-sm">
+          <div class="project-img-wrapper">
+            <img [src]="p.image" class="card-img-top" alt="{{ p.title }}" />
+            <div class="overlay d-flex justify-content-center align-items-center">
+              <a [href]="p.link" target="_blank" class="btn btn-light btn-sm rounded-pill">
+                <i class="fa fa-eye me-2"></i> View Project
+              </a>
+            </div>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="fw-bold">{{ p.title }}</h5>
+            <p class="text-muted small">{{ p.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="services py-5 bg-light" id="services" data-aos="fade-up">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-primary">My Services</h2>
+      <p class="text-muted">
+        Here’s what I can do for you — from frontend design to full-stack web development.
+      </p>
+    </div>
+
+    <div class="row g-4 text-center">
+      <div class="col-md-4 col-sm-6" *ngFor="let service of services" data-aos="zoom-in">
+        <div class="card service-card p-4 h-100 border-0 shadow-sm">
+          <div class="icon-circle mx-auto mb-3">
+            <i [class]="service.icon + ' fa-2x text-white'"></i>
+          </div>
+          <h5 class="fw-semibold">{{ service.title }}</h5>
+          <p class="text-muted small">{{ service.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

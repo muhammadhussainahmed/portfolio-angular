@@ -1,0 +1,147 @@
+.about {
+  background: linear-gradient(135deg, #f0f4ff, #e9ecef);
+  padding-top: 100px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Add soft overlay for depth */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 0;
+}
+
+/* Ensure content stays above overlay */
+.about .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Profile Image */
+.about-img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 5px solid #0d6efd;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(13, 110, 253, 0.5);
+}
+
+/* Headings */
+.about h2 {
+  font-weight: 700;
+  color: #0d6efd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about h3 {
+  color: #212529;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+.about p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Personal Info */
+.personal-info p strong {
+  color: #0d6efd;
+}
+
+.personal-info p {
+  margin-bottom: 0.6rem;
+  color: #333;
+  font-size: 0.96rem;
+}
+
+/* Skills Section */
+.skill span {
+  font-weight: 600;
+  color: #333;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 10px;
+  background-color: #dee2e6;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #0d6efd, #00bcd4);
+  height: 100%;
+  transition: width 1s ease-in-out;
+}
+
+/* Timeline */
+.timeline {
+  border-left: 3px solid #0d6efd;
+  padding-left: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+}
+
+/* Buttons */
+.btn {
+  transition: all 0.3s ease-in-out;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* AOS Animations */
+[data-aos] {
+  transition-duration: 1s !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    text-align: center;
+  }
+
+  .about-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .timeline {
+    border-left: none;
+    padding-left: 0;
+  }
+}
