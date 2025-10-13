@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import emailjs from '@emailjs/browser';
-
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -19,29 +19,35 @@ export class ContactComponent {
   successMessage = '';
   errorMessage = '';
 
-  sendEmail(e: Event) {
-    e.preventDefault();
+  sendEmail(contactForm: NgForm) {
+    // agar form invalid hai to return kar do
+    if (contactForm.invalid) {
+      this.errorMessage = '⚠️ Please fill all required fields correctly.';
+      return;
+    }
+
     this.isSending = true;
     this.successMessage = '';
     this.errorMessage = '';
 
     emailjs.send(
-      'service_tp8ham9',
-      'template_fcjsozq',
+      'service_tp8ham9',   
+      'template_fcjsozq',  
       {
         from_name: this.formData.name,
         from_email: this.formData.email,
         message: this.formData.message
       },
-      'tCCcs2pxUswDiql1P'
+      'tCCcs2pxUswDiql1P'  // ✅ Tumhara Public Key
     )
     .then(() => {
       this.isSending = false;
-      this.successMessage = 'Message sent successfully! 🎉';
+      this.successMessage = '✅ Message sent successfully!';
       this.formData = { name: '', email: '', message: '' };
+      contactForm.resetForm(); // form clear
     }, (error) => {
       this.isSending = false;
-      this.errorMessage = 'Failed to send message. Please try again.';
+      this.errorMessage = '❌ Failed to send message. Please try again.';
       console.error('EmailJS Error:', error);
     });
   }
