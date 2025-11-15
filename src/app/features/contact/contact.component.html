@@ -1,15 +1,14 @@
-<section class="contact-section py-5" id="contact" data-aos="fade-up">
+<section class="contact-section py-5" id="contact">
   <div class="container">
     <h2 class="text-center text-primary fw-bold mb-4">Get In Touch</h2>
     <p class="text-center text-muted mb-5">
-      I’d love to hear from you! Whether you have a question or just want to say hi,
-      feel free to drop me a message.
+      I’d love to hear from you! Fill the form below and it will reset after submission.
     </p>
 
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)" class="contact-form shadow-lg p-4 bg-white rounded">
-          
+        <form #contactForm="ngForm" (ngSubmit)="submitForm(contactForm)" class="contact-form shadow-lg p-4 bg-white rounded">
+
           <div class="mb-3">
             <label class="form-label fw-semibold">
               <i class="fa fa-user me-2 text-primary"></i> Name
@@ -23,9 +22,6 @@
               [(ngModel)]="formData.name"
               #name="ngModel"
             />
-            <div *ngIf="name.invalid && name.touched" class="text-danger small">
-              Name is required.
-            </div>
           </div>
 
           <div class="mb-3">
@@ -42,9 +38,6 @@
               [(ngModel)]="formData.email"
               #email="ngModel"
             />
-            <div *ngIf="email.invalid && email.touched" class="text-danger small">
-              Valid email is required.
-            </div>
           </div>
 
           <div class="mb-3">
@@ -60,18 +53,13 @@
               [(ngModel)]="formData.message"
               #message="ngModel"
             ></textarea>
-            <div *ngIf="message.invalid && message.touched" class="text-danger small">
-              Message cannot be empty.
-            </div>
           </div>
 
-          <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="isSending">
-            <i class="fa fa-paper-plane me-2"></i>
-            {{ isSending ? 'Sending...' : 'Send Message' }}
+          <button type="submit" class="btn btn-primary w-100 mt-3">
+            <i class="fa fa-paper-plane me-2"></i> Submit
           </button>
 
           <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
-          <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
         </form>
       </div>
     </div>

@@ -15,17 +15,19 @@ export class AboutComponent implements OnInit {
   }
 
 
-  skills = [
-    { name: 'HTML', percent: 90 },
-    { name: 'CSS', percent: 76 },
-    { name: 'JavaScript', percent: 62 },
-    { name: 'TypeScript', percent: 70 },
-    { name: 'Angular', percent: 80 },
-    { name: 'ASP.NET Core Web API', percent: 75 },
-    { name: 'SQL', percent: 70 },
-    { name: 'Git & GitHub', percent: 65 },
-    { name: 'Postman', percent: 60 },
-  ];
+skills = [
+  { name: 'HTML', percent: 90 },
+  { name: 'CSS', percent: 76 },
+  { name: 'JavaScript', percent: 62 },
+  { name: 'TypeScript', percent: 70 },
+  { name: 'Angular', percent: 80 },
+  { name: 'ASP.NET Core Web API', percent: 75 },
+  { name: 'SQL', percent: 70 },
+  { name: 'Git & GitHub', percent: 65 },
+  { name: 'Postman', percent: 60 },
+  { name: 'Adobe Illustrator', percent: 70 },
+  { name: 'Adobe Photoshop', percent: 72 },
+];
 
-  
+
 }
