@@ -15,4 +15,7 @@ export class NavbarComponent {
       navbar?.classList.remove('scrolled');
     }
   }
+
+    isOpen: boolean = false;
+
 }

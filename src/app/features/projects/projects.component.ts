@@ -30,7 +30,7 @@ export class ProjectsComponent implements OnInit {
       link: 'https://example.com',
       category: 'app'
     },
-   
+
     {
       title: 'Portfolio Template',
       description: 'Modern portfolio design built using Angular',
@@ -53,4 +53,5 @@ export class ProjectsComponent implements OnInit {
         ? this.projects
         : this.projects.filter(p => p.category === category);
   }
+    activeFilter: string = 'all';
 }

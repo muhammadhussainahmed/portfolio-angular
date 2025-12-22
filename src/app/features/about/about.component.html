@@ -1,117 +1,101 @@
-<section class="about py-5" id="about">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <h2 class="fw-bold text-primary">About Me</h2>
-      <p class="text-muted">
-        Get to know more about my journey, skills, and passion for development.
+<section id="about" class="relative py-24 bg-gradient-to-b from-gray-900 to-gray-800 text-gray-200" data-aos="fade-up">
+  <div class="container mx-auto px-4">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-indigo-400 uppercase tracking-wider mb-2">About Me</h2>
+      <p class="text-gray-300 max-w-xl mx-auto">
+        I am a passionate Full Stack Developer, dedicated to building modern, scalable, and responsive web applications.
       </p>
     </div>
 
-    <div class="row align-items-center">
-      <!-- Left Side -->
-      <div class="col-md-5 text-center mb-4 mb-md-0" data-aos="fade-right">
-        <img src="assets/amanpic.jpg" alt="Profile" class="about-img shadow-lg" />
+    <!-- Profile Info -->
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-10 mb-16">
+
+      <!-- Left: Profile Image -->
+      <div class="flex justify-center md:w-1/3" data-aos="fade-right">
+        <img src="assets/amanpic.jpg" alt="Profile" class="w-64 h-64 rounded-full border-2 border-indigo-400 shadow-2xl object-cover transform transition-transform duration-500 hover:scale-105"/>
       </div>
 
-      <!-- Right Side -->
-      <div class="col-md-7" data-aos="fade-left">
-        <h3 class="fw-semibold text-primary mb-3">I'm Amanullah</h3>
-        <p class="text-muted lead">
-          I’m a motivated and detail-oriented
-          <b>Full Stack Developer Trainee</b> with strong expertise in
-          <b>Angular</b> for frontend development and
-          <b>ASP.NET Core Web API</b> with <b>SQL Server</b> for backend
-          integration. I enjoy transforming ideas into functional, visually
-          appealing, and user-friendly web applications. With hands-on project
-          experience, I focus on writing clean, maintainable code and constantly
-          enhancing my skills to stay aligned with modern web development
-          trends.
+      <!-- Right: Info -->
+      <div class="md:w-2/3 space-y-6" data-aos="fade-left">
+        <h3 class="text-2xl font-semibold text-indigo-400">I'm Amanullah</h3>
+        <p class="text-gray-300 text-justify leading-relaxed">
+          I am a motivated and detail-oriented <span class="font-semibold text-indigo-400">Full Stack Developer</span> with expertise in <span class="font-semibold text-indigo-400">Angular</span> for front-end and <span class="font-semibold text-indigo-400">ASP.NET Core Web API</span> with <span class="font-semibold text-indigo-400">SQL Server</span> for backend.
+          I enjoy turning ideas into functional, user-friendly, and visually appealing applications.
         </p>
 
-        <div class="personal-info mt-4">
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <p><strong>Birthday:</strong> 27 Sep 2005</p>
-            </div>
-            <div class="col-sm-6">
-              <p><strong>Age:</strong> 19</p>
-            </div>
-            <div class="col-sm-6">
-              <p><strong>Email:</strong> amanullah257800@gmail.com</p>
-            </div>
-            <div class="col-sm-6">
-              <p><strong>Phone:</strong> +92 3233898895</p>
-            </div>
-            <div class="col-sm-6">
-              <p><strong>Address:</strong> Korangi 1, Karachi</p>
-            </div>
-            <div class="col-sm-6">
-              <p><strong>Degree:</strong> Intermediate</p>
-            </div>
-          </div>
+        <!-- Personal Info -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-300">
+          <p><span class="font-semibold text-indigo-400">Birthday:</span> 27 Sep 2005</p>
+          <p><span class="font-semibold text-indigo-400">Age:</span> 19</p>
+          <p><span class="font-semibold text-indigo-400">Email:</span> amanullah257800@gmail.com</p>
+          <p><span class="font-semibold text-indigo-400">Phone:</span> +92 3233898895</p>
+          <p><span class="font-semibold text-indigo-400">Address:</span> Korangi 1, Karachi</p>
+          <p><span class="font-semibold text-indigo-400">Degree:</span> Intermediate</p>
+        </div>
 
-          <div class="mt-4">
-            <a href="assets/AmanCv.pdf" class="btn btn-primary me-2" download>
-              <i class="fa fa-download me-1"></i> Download CV
-            </a>
-            <a href="#contact" class="btn btn-outline-primary">
-              <i class="fa fa-paper-plane me-1"></i> Hire Me
-            </a>
+        <!-- Buttons -->
+        <div class="flex flex-wrap gap-4 mt-4">
+          <a href="assets/AmanCv.pdf" download
+             class="bg-indigo-400 text-gray-900 px-6 py-2 rounded-full shadow-lg hover:bg-indigo-500 hover:shadow-2xl transition-all duration-300 flex items-center gap-2">
+            <i class="fa fa-download"></i> Download CV
+          </a>
+          <a href="#contact"
+             class="border border-indigo-400 text-indigo-400 px-6 py-2 rounded-full hover:bg-indigo-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2">
+            <i class="fa fa-paper-plane"></i> Hire Me
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div data-aos="fade-up" class="mb-12">
+      <h4 class="text-xl font-bold text-indigo-400 mb-6 text-center">Technical Skills</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div *ngFor="let skill of skills" class="space-y-2">
+          <div class="flex justify-between items-center font-semibold text-gray-300">
+            <span>{{ skill.name }}</span>
+            <span>{{ skill.percent }}%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+            <div class="h-4 rounded-full bg-gradient-to-r from-indigo-400 via-indigo-300 to-indigo-500 transition-all duration-1000" [style.width]="skill.percent + '%'"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="skills-section mt-5" data-aos="fade-up">
-      <h4 class="fw-bold text-center mb-4 text-primary">Technical Skills</h4>
-      <div class="row">
-        <div class="col-md-6" *ngFor="let skill of skills">
-          <div class="skill mb-3">
-            <div class="d-flex justify-content-between">
-              <span>{{ skill.name }}</span>
-              <span>{{ skill.percent }}%</span>
-            </div>
-            <div class="progress">
-              <div
-                class="progress-bar"
-                [style.width]="skill.percent + '%'"
-              ></div>
-            </div>
+    <!-- Education & Experience -->
+    <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up">
+      <!-- Education -->
+      <div>
+        <h4 class="text-xl font-bold text-indigo-400 mb-4">Education</h4>
+        <div class="space-y-6">
+          <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-indigo-400 transition-shadow duration-300">
+            <h5 class="font-semibold text-gray-300">Matriculation in Bio Science</h5>
+            <p class="text-gray-400">G.M Memorial Grammar School</p>
+            <small class="text-gray-500"><i class="fa fa-calendar"></i> 2021 - 2022</small>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-indigo-400 transition-shadow duration-300">
+            <h5 class="font-semibold text-gray-300">Intermediate in Computer Science</h5>
+            <p class="text-gray-400">Govt. Degree Boys College Landhi 6</p>
+            <small class="text-gray-500"><i class="fa fa-calendar"></i> 2023 - 2024</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div>
+        <h4 class="text-xl font-bold text-indigo-400 mb-4">Experience</h4>
+        <div class="space-y-4">
+          <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-indigo-400 transition-shadow duration-300">
+            <h5 class="font-semibold text-gray-300">Persistent Solution (Software House)</h5>
+            <p class="text-gray-400">Focused on Web & App Development using Angular and ASP.NET Core.</p>
+            <small class="text-gray-500"><i class="fa fa-calendar"></i> 2024 - Present</small>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row mt-5">
-      <div class="col-md-6" data-aos="fade-right">
-        <h4 class="fw-bold text-primary mb-3">Education</h4>
-        <div class="timeline shadow-sm p-3 rounded bg-white">
-          <div class="timeline-item mb-3">
-            <h5>Matriculation in Bio Science</h5>
-            <p class="text-muted mb-1">G.M Memorial Grammar School</p>
-            <small class="text-secondary"><i class="fa fa-calendar"></i> 2021 - 2022</small>
-          </div>
-          <div class="timeline-item">
-            <h5>Intermediate in Computer Science</h5>
-            <p class="text-muted mb-1">Govt. Degree Boys College Landhi 6</p>
-            <small class="text-secondary"><i class="fa fa-calendar"></i> 2023 - 2024</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6" data-aos="fade-left">
-        <h4 class="fw-bold text-primary mb-3">Experience</h4>
-        <div class="timeline shadow-sm p-3 rounded bg-white">
-          <div class="timeline-item">
-            <h5>Persistent Solution (Software House)</h5>
-            <p class="text-muted mb-1">
-              Internship focused on Web & App Development using Angular and
-              ASP.NET Core.
-            </p>
-            <small class="text-secondary"><i class="fa fa-calendar"></i> 2024 - Present</small>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>

@@ -1,46 +1,84 @@
-<footer class="footer text-white py-5"n data-aos="fade-up">
-  <div class="container">
-    <div class="row align-items-start text-center text-md-start">
+<footer class="bg-gradient-to-b from-gray-900 to-gray-800 text-gray-300 py-12" data-aos="fade-up">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
 
       <!-- Brand Info -->
-      <div class="col-md-3 mb-4 mb-md-0">
-        <h4 class="fw-bold text-warning mb-2">
+      <div>
+        <h4 class="text-indigo-400 font-bold text-2xl mb-2 flex items-center justify-center md:justify-start">
           <i class="fa fa-code me-2"></i> Amanullah
         </h4>
-        <p class="text-light small">
-          Full Stack Developer Trainee | Angular • ASP.NET Core • SQL Server <br />
+        <p class="text-gray-400 text-sm">
+          Full Stack Developer | Angular • ASP.NET Core • SQL Server <br />
           Building scalable, modern, and responsive web applications.
         </p>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center md:justify-start mt-4 space-x-5">
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/923233898895" target="_blank"
+             class="text-green-500 hover:text-green-400 text-xl transition">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/Amanullah7172" target="_blank"
+             class="text-gray-300 hover:text-white text-xl transition">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/aman-ullah-122a242ab/?trk=opento_sprofile_topcard" target="_blank"
+             class="text-blue-400 hover:text-blue-300 text-xl transition">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:amanullah257800@gmail.com"
+             class="text-red-400 hover:text-red-300 text-xl transition">
+            <i class="fa fa-envelope"></i>
+          </a>
+
+        </div>
       </div>
 
       <!-- Quick Links -->
-      <div class="col-md-3 mb-4 mb-md-0">
-        <h6 class="fw-semibold mb-3 text-uppercase text-primary">Quick Links</h6>
-        <ul class="list-unstyled footer-links">
-          <li><a routerLink="/home"><i class="fa fa-angle-right me-2"></i>Home</a></li>
-          <li><a routerLink="/projects"><i class="fa fa-angle-right me-2"></i>Projects</a></li>
-          <li><a routerLink="/about"><i class="fa fa-angle-right me-2"></i>About</a></li>
-          <li><a routerLink="/contact"><i class="fa fa-angle-right me-2"></i>Contact</a></li>
+      <div>
+        <h6 class="font-semibold mb-3 uppercase text-indigo-400">Quick Links</h6>
+        <ul class="space-y-2">
+          <li><a routerLink="/home" class="hover:text-indigo-300 transition-colors"><i class="fa fa-angle-right me-2"></i>Home</a></li>
+          <li><a routerLink="/projects" class="hover:text-indigo-300 transition-colors"><i class="fa fa-angle-right me-2"></i>Projects</a></li>
+          <li><a routerLink="/about" class="hover:text-indigo-300 transition-colors"><i class="fa fa-angle-right me-2"></i>About</a></li>
+          <li><a routerLink="/contact" class="hover:text-indigo-300 transition-colors"><i class="fa fa-angle-right me-2"></i>Contact</a></li>
         </ul>
       </div>
 
       <!-- Contact Info -->
-      <div class="col-md-3 mb-4 mb-md-0">
-        <h6 class="fw-semibold mb-3 text-uppercase text-primary">Contact Info</h6>
-        <ul class="list-unstyled contact-info">
-          <li><i class="fa fa-envelope me-2 text-warning"></i> amanullah257800@gmail.com</li>
-          <li><i class="fa fa-phone me-2 text-warning"></i> +92 3233898895</li>
-          <li><i class="fa fa-map-marker-alt me-2 text-warning"></i>Korangi 1,Karachi</li>
+      <div>
+        <h6 class="font-semibold mb-3 uppercase text-indigo-400">Contact Info</h6>
+        <ul class="space-y-2 text-gray-400">
+          <li><i class="fa fa-envelope me-2 text-indigo-400"></i> amanullah257800@gmail.com</li>
+          <li><i class="fa fa-phone me-2 text-indigo-400"></i> +92 3233898895</li>
+          <li><i class="fa fa-map-marker-alt me-2 text-indigo-400"></i> Korangi 1, Karachi</li>
         </ul>
       </div>
 
+      <!-- Extra Links -->
+      <div>
+        <h6 class="font-semibold mb-3 uppercase text-indigo-400">Links</h6>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-indigo-300 transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-indigo-300 transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-indigo-300 transition-colors">Support</a></li>
+        </ul>
+      </div>
 
     </div>
 
-    <hr class="footer-divider my-4" />
+    <hr class="border-gray-700 my-8" />
 
-    <div class="text-center small text-secondary">
-      © {{currentYear}} <span class="text-primary fw-semibold">Amanullah</span>. All Rights Reserved.
+    <div class="text-center text-gray-500 text-sm">
+      © {{currentYear}} <span class="text-indigo-400 font-semibold">Amanullah</span>. All Rights Reserved.
     </div>
   </div>
 </footer>

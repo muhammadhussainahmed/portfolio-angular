@@ -1,79 +1,85 @@
-<section class="contact-section py-5" id="contact" data-aos="fade-up">
-  <div class="container">
-    <h2 class="text-center text-primary fw-bold mb-4">Get In Touch</h2>
-    <p class="text-center text-muted mb-5">
-      I’d love to hear from you! Whether you have a question or just want to say hi,
-      feel free to drop me a message.
-    </p>
+<section id="contact" class="py-24 bg-gradient-to-b from-gray-900 to-gray-800 text-gray-200" data-aos="fade-up">
+  <div class="container mx-auto px-4">
 
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)" class="contact-form shadow-lg p-4 bg-white rounded">
+    <!-- Section Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-indigo-400 mb-2">Get In Touch</h2>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        I’d love to hear from you! Whether you have a question or just want to say hi,
+        feel free to drop me a message.
+      </p>
+    </div>
 
-          <div class="mb-3">
-            <label class="form-label fw-semibold">
-              <i class="fa fa-user me-2 text-primary"></i> Name
+    <!-- Contact Form -->
+    <div class="flex justify-center">
+      <div class="w-full md:w-1/2">
+        <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)"
+              class="bg-gray-900 rounded-xl p-8 shadow-2xl transition-transform transform hover:-translate-y-2 duration-300">
+
+          <!-- Name -->
+          <div class="mb-4">
+            <label class="block font-semibold mb-2 text-indigo-400">
+              <i class="fa fa-user me-2"></i> Name
             </label>
-            <input
-              type="text"
-              name="name"
-              class="form-control"
-              placeholder="Enter your name"
-              required
-              [(ngModel)]="formData.name"
-              #name="ngModel"
-            />
-            <div *ngIf="name.invalid && name.touched" class="text-danger small">
+            <input type="text" name="name"
+                   class="w-full border border-gray-700 rounded-md p-2 bg-gray-800 text-gray-200 focus:border-indigo-400 focus:ring focus:ring-indigo-400"
+                   placeholder="Enter your name"
+                   required
+                   [(ngModel)]="formData.name"
+                   #name="ngModel"/>
+            <div *ngIf="name.invalid && name.touched" class="text-red-500 text-sm mt-1">
               Name is required.
             </div>
           </div>
 
-          <div class="mb-3">
-            <label class="form-label fw-semibold">
-              <i class="fa fa-envelope me-2 text-primary"></i> Email
+          <!-- Email -->
+          <div class="mb-4">
+            <label class="block font-semibold mb-2 text-indigo-400">
+              <i class="fa fa-envelope me-2"></i> Email
             </label>
-            <input
-              type="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter your email"
-              required
-              email
-              [(ngModel)]="formData.email"
-              #email="ngModel"
-            />
-            <div *ngIf="email.invalid && email.touched" class="text-danger small">
+            <input type="email" name="email"
+                   class="w-full border border-gray-700 rounded-md p-2 bg-gray-800 text-gray-200 focus:border-indigo-400 focus:ring focus:ring-indigo-400"
+                   placeholder="Enter your email"
+                   required
+                   email
+                   [(ngModel)]="formData.email"
+                   #email="ngModel"/>
+            <div *ngIf="email.invalid && email.touched" class="text-red-500 text-sm mt-1">
               Valid email is required.
             </div>
           </div>
 
-          <div class="mb-3">
-            <label class="form-label fw-semibold">
-              <i class="fa fa-comment-dots me-2 text-primary"></i> Message
+          <!-- Message -->
+          <div class="mb-4">
+            <label class="block font-semibold mb-2 text-indigo-400">
+              <i class="fa fa-comment-dots me-2"></i> Message
             </label>
-            <textarea
-              name="message"
-              class="form-control"
-              rows="4"
-              placeholder="Your message..."
-              required
-              [(ngModel)]="formData.message"
-              #message="ngModel"
-            ></textarea>
-            <div *ngIf="message.invalid && message.touched" class="text-danger small">
+            <textarea name="message" rows="4"
+                      class="w-full border border-gray-700 rounded-md p-2 bg-gray-800 text-gray-200 focus:border-indigo-400 focus:ring focus:ring-indigo-400"
+                      placeholder="Your message..."
+                      required
+                      [(ngModel)]="formData.message"
+                      #message="ngModel"></textarea>
+            <div *ngIf="message.invalid && message.touched" class="text-red-500 text-sm mt-1">
               Message cannot be empty.
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="isSending">
+          <!-- Submit Button -->
+          <button type="submit"
+                  class="w-full bg-indigo-400 text-gray-900 py-2 rounded-full font-semibold transition-transform hover:scale-105 hover:bg-indigo-500"
+                  [disabled]="isSending">
             <i class="fa fa-paper-plane me-2"></i>
             {{ isSending ? 'Sending...' : 'Send Message' }}
           </button>
 
-          <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
-          <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+          <!-- Success/Error Message -->
+          <div *ngIf="successMessage" class="mt-4 text-green-500 font-medium">{{ successMessage }}</div>
+          <div *ngIf="errorMessage" class="mt-4 text-red-500 font-medium">{{ errorMessage }}</div>
+
         </form>
       </div>
     </div>
+
   </div>
 </section>

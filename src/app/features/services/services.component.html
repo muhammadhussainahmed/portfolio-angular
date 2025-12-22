@@ -1,22 +1,30 @@
-<section class="services py-5 bg-light" id="services" data-aos="fade-up">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-primary">My Services</h2>
-      <p class="text-muted">
+<section id="services" class="py-24 bg-gradient-to-b from-gray-900 to-gray-800 text-gray-200" data-aos="fade-up">
+  <div class="container mx-auto px-4">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-indigo-400 mb-2">My Services</h2>
+      <p class="text-gray-300 max-w-2xl mx-auto">
         Here’s what I can do for you — from frontend design to full-stack web development.
       </p>
     </div>
 
-    <div class="row g-4 text-center">
-      <div class="col-md-4 col-sm-6" *ngFor="let service of services" data-aos="zoom-in">
-        <div class="card service-card p-4 h-100 border-0 shadow-sm">
-          <div class="icon-circle mx-auto mb-3">
-            <i [class]="service.icon + ' fa-2x text-white'"></i>
+    <!-- Services Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+      <div *ngFor="let service of services" class="group">
+        <div class="bg-gray-900 rounded-xl p-6 shadow-lg transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+
+          <!-- Icon Circle -->
+          <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-300 flex items-center justify-center transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+            <i [class]="service.icon + ' fa-2x text-gray-900'"></i>
           </div>
-          <h5 class="fw-semibold">{{ service.title }}</h5>
-          <p class="text-muted small">{{ service.desc }}</p>
+
+          <!-- Title & Description -->
+          <h5 class="font-semibold text-indigo-400 mb-2">{{ service.title }}</h5>
+          <p class="text-gray-300 text-sm">{{ service.desc }}</p>
         </div>
       </div>
     </div>
+
   </div>
 </section>
