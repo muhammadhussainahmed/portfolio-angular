@@ -37,7 +37,7 @@ export class ContactComponent {
         from_email: this.formData.email,
         message: this.formData.message
       },
-      'tCCcs2pxUswDiql1P'
+      ' '
     )
     .then(() => {
       this.isSending = false;
